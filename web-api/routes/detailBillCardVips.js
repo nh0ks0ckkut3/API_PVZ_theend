@@ -30,11 +30,8 @@ router.post("/", async (req, res, next) =>{
     try {
         const {body} = req;
         const detailBill = await DetailBillCardVip.createDetailBill(body);
-<<<<<<< HEAD
         return res.status(200).json(detailBill);
-=======
         return res.status(200).json({status: detailBill});
->>>>>>> 6972b2879fccf77e994796255ca3a417edd2e515
     } catch (error) {
         console.log("error: ", error);
         return res.status(500).json({status: detailBill});
