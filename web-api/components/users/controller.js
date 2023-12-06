@@ -83,11 +83,7 @@ const updateProfile = async (id, data) =>{
        user.gender = gender || user.gender
        user.level = level || user.level
        await user.save();
-<<<<<<< HEAD
        return true;
-=======
-        return true;
->>>>>>> 6972b2879fccf77e994796255ca3a417edd2e515
     } catch (error) {
         console.log("error: ", error);
         return false;
