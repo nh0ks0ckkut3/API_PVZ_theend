@@ -26,8 +26,7 @@ const createDetailBill = async (data) =>{
     
     try {
         const {detail, cardVip_id, user_id} = data;
-        console.log("hihihih",detail, cardVip_id, user_id)
-        // const {name, detail, price, image, cardVip_id, user_id} = data;
+        const {name, detail, price, image, cardVip_id, user_id} = data;
         const cardVip = await CardVipModel.findById(cardVip_id);
         const detailBill = new DetailBillCardVipModel({
             name: cardVip.name,
@@ -38,12 +37,9 @@ const createDetailBill = async (data) =>{
             user_id: user_id
         });
         await detailBill.save();
-<<<<<<< HEAD
         const detaiBill_id = await DetailBillCardVipModel.find({user_id : user_id});
         return detaiBill_id;
-=======
         return true;
->>>>>>> 6972b2879fccf77e994796255ca3a417edd2e515
     } catch (error) {
         console.log('error', error);
         return false;
